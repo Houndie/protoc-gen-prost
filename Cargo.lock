@@ -177,8 +177,8 @@ checksum = "bdbb7b706f2afc610f3853550cdbbf6372fd324824a087806bd4480ea4996e24"
 dependencies = [
  "heck",
  "itertools",
- "prost",
- "prost-types",
+ "prost 0.11.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ "prost-types 0.11.8 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -217,7 +217,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e48e50df39172a3e7eb17e14642445da64996989bc212b583015435d39a58537"
 dependencies = [
  "bytes",
- "prost-derive",
+ "prost-derive 0.11.8 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "prost"
+version = "0.11.8"
+source = "git+https://github.com/Houndie/prost?rev=cd03610a716050c3526f682ac1625205a0c8d185#cd03610a716050c3526f682ac1625205a0c8d185"
+dependencies = [
+ "bytes",
+ "prost-derive 0.11.8 (git+https://github.com/Houndie/prost?rev=cd03610a716050c3526f682ac1625205a0c8d185)",
 ]
 
 [[package]]
@@ -234,10 +243,29 @@ dependencies = [
  "multimap",
  "petgraph",
  "prettyplease",
- "prost",
- "prost-types",
+ "prost 0.11.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ "prost-types 0.11.8 (registry+https://github.com/rust-lang/crates.io-index)",
  "regex",
  "syn",
+ "tempfile",
+ "which",
+]
+
+[[package]]
+name = "prost-build"
+version = "0.11.8"
+source = "git+https://github.com/Houndie/prost?rev=cd03610a716050c3526f682ac1625205a0c8d185#cd03610a716050c3526f682ac1625205a0c8d185"
+dependencies = [
+ "bytes",
+ "heck",
+ "itertools",
+ "lazy_static",
+ "log",
+ "multimap",
+ "petgraph",
+ "prost 0.11.8 (git+https://github.com/Houndie/prost?rev=cd03610a716050c3526f682ac1625205a0c8d185)",
+ "prost-types 0.11.8 (git+https://github.com/Houndie/prost?rev=cd03610a716050c3526f682ac1625205a0c8d185)",
+ "regex",
  "tempfile",
  "which",
 ]
@@ -256,12 +284,32 @@ dependencies = [
 ]
 
 [[package]]
+name = "prost-derive"
+version = "0.11.8"
+source = "git+https://github.com/Houndie/prost?rev=cd03610a716050c3526f682ac1625205a0c8d185#cd03610a716050c3526f682ac1625205a0c8d185"
+dependencies = [
+ "anyhow",
+ "itertools",
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
 name = "prost-types"
 version = "0.11.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "379119666929a1afd7a043aa6cf96fa67a6dce9af60c88095a4686dbce4c9c88"
 dependencies = [
- "prost",
+ "prost 0.11.8 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "prost-types"
+version = "0.11.8"
+source = "git+https://github.com/Houndie/prost?rev=cd03610a716050c3526f682ac1625205a0c8d185#cd03610a716050c3526f682ac1625205a0c8d185"
+dependencies = [
+ "prost 0.11.8 (git+https://github.com/Houndie/prost?rev=cd03610a716050c3526f682ac1625205a0c8d185)",
 ]
 
 [[package]]
@@ -269,9 +317,9 @@ name = "protoc-gen-prost"
 version = "0.2.2"
 dependencies = [
  "once_cell",
- "prost",
- "prost-build",
- "prost-types",
+ "prost 0.11.8 (git+https://github.com/Houndie/prost?rev=cd03610a716050c3526f682ac1625205a0c8d185)",
+ "prost-build 0.11.8 (git+https://github.com/Houndie/prost?rev=cd03610a716050c3526f682ac1625205a0c8d185)",
+ "prost-types 0.11.8 (git+https://github.com/Houndie/prost?rev=cd03610a716050c3526f682ac1625205a0c8d185)",
  "regex",
 ]
 
@@ -280,9 +328,9 @@ name = "protoc-gen-prost-crate"
 version = "0.3.1"
 dependencies = [
  "once_cell",
- "prost",
- "prost-build",
- "prost-types",
+ "prost 0.11.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ "prost-build 0.11.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ "prost-types 0.11.8 (registry+https://github.com/rust-lang/crates.io-index)",
  "protoc-gen-prost",
  "regex",
 ]
@@ -292,9 +340,9 @@ name = "protoc-gen-prost-serde"
 version = "0.2.3"
 dependencies = [
  "pbjson-build",
- "prost",
- "prost-build",
- "prost-types",
+ "prost 0.11.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ "prost-build 0.11.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ "prost-types 0.11.8 (registry+https://github.com/rust-lang/crates.io-index)",
  "protoc-gen-prost",
  "regex",
 ]
@@ -309,9 +357,9 @@ version = "0.2.2"
 dependencies = [
  "heck",
  "prettyplease",
- "prost",
- "prost-build",
- "prost-types",
+ "prost 0.11.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ "prost-build 0.11.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ "prost-types 0.11.8 (registry+https://github.com/rust-lang/crates.io-index)",
  "protoc-gen-prost",
  "regex",
  "syn",
@@ -401,7 +449,7 @@ checksum = "5bf5e9b9c0f7e0a7c027dcfaba7b2c60816c7049171f679d99ee2ff65d0de8c4"
 dependencies = [
  "prettyplease",
  "proc-macro2",
- "prost-build",
+ "prost-build 0.11.8 (registry+https://github.com/rust-lang/crates.io-index)",
  "quote",
  "syn",
 ]

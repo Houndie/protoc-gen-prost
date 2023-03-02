@@ -1,3 +1,15 @@
+# A note on this fork
+
+This is a fork of protoc-gen-prost that builds protoc-gen-prost against nswarms wonderful PR branch that adds extensions to Prost, instead of mainline Prost itself.
+
+That has the following implications:
+
+* This is built against an out-of-date version of Prost
+* That version of Prost will probably never be updated.
+
+That means, you probably don't want to use this fork unless you really know what you're doing.  In almost all cases, you want to use the repository this was forked from.
+
+
 # protoc-gen-prost
 
 A `protoc` plugin that generates code using the _[Prost!]_ code generation engine.

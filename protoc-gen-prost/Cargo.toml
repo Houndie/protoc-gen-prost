@@ -18,9 +18,9 @@ exclude = ["proto"]
 
 [dependencies]
 once_cell = "1.10.0"
-prost-build = { version = "0.11.8", default-features = false }
-prost-types = { version = "0.11.8", default-features = false }
-prost = { version = "0.11.8", default-features = false, features = ["std"] }
+prost-build = { version = "0.11.8-h", git = "https://github.com/Houndie/prost", rev = "00b422742bbcc994f7758928a6a76a01396a8c12", default-features = false }
+prost-types = { version = "0.11.8-h", git = "https://github.com/Houndie/prost", rev = "00b422742bbcc994f7758928a6a76a01396a8c12", default-features = false }
+prost = { version = "0.11.8-h", git = "https://github.com/Houndie/prost", rev = "00b422742bbcc994f7758928a6a76a01396a8c12", default-features = false, features = ["std"] }
 regex = { version = "1.5.5", default-features = false }
 
 [profile.release]
