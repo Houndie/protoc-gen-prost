@@ -177,8 +177,8 @@ checksum = "bdbb7b706f2afc610f3853550cdbbf6372fd324824a087806bd4480ea4996e24"
 dependencies = [
  "heck",
  "itertools",
- "prost 0.11.8 (registry+https://github.com/rust-lang/crates.io-index)",
- "prost-types 0.11.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ "prost 0.11.8",
+ "prost-types 0.11.8",
 ]
 
 [[package]]
@@ -212,6 +212,15 @@ dependencies = [
 
 [[package]]
 name = "prost"
+version = "0.11.8-h"
+source = "git+https://github.com/Houndie/prost?rev=00b422742bbcc994f7758928a6a76a01396a8c12#00b422742bbcc994f7758928a6a76a01396a8c12"
+dependencies = [
+ "bytes",
+ "prost-derive 0.11.8 (git+https://github.com/Houndie/prost?rev=00b422742bbcc994f7758928a6a76a01396a8c12)",
+]
+
+[[package]]
+name = "prost"
 version = "0.11.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e48e50df39172a3e7eb17e14642445da64996989bc212b583015435d39a58537"
@@ -221,12 +230,22 @@ dependencies = [
 ]
 
 [[package]]
-name = "prost"
-version = "0.11.8"
-source = "git+https://github.com/Houndie/prost?rev=cd03610a716050c3526f682ac1625205a0c8d185#cd03610a716050c3526f682ac1625205a0c8d185"
+name = "prost-build"
+version = "0.11.8-h"
+source = "git+https://github.com/Houndie/prost?rev=00b422742bbcc994f7758928a6a76a01396a8c12#00b422742bbcc994f7758928a6a76a01396a8c12"
 dependencies = [
  "bytes",
- "prost-derive 0.11.8 (git+https://github.com/Houndie/prost?rev=cd03610a716050c3526f682ac1625205a0c8d185)",
+ "heck",
+ "itertools",
+ "lazy_static",
+ "log",
+ "multimap",
+ "petgraph",
+ "prost 0.11.8-h",
+ "prost-types 0.11.8-h",
+ "regex",
+ "tempfile",
+ "which",
 ]
 
 [[package]]
@@ -243,29 +262,10 @@ dependencies = [
  "multimap",
  "petgraph",
  "prettyplease",
- "prost 0.11.8 (registry+https://github.com/rust-lang/crates.io-index)",
- "prost-types 0.11.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ "prost 0.11.8",
+ "prost-types 0.11.8",
  "regex",
  "syn",
- "tempfile",
- "which",
-]
-
-[[package]]
-name = "prost-build"
-version = "0.11.8"
-source = "git+https://github.com/Houndie/prost?rev=cd03610a716050c3526f682ac1625205a0c8d185#cd03610a716050c3526f682ac1625205a0c8d185"
-dependencies = [
- "bytes",
- "heck",
- "itertools",
- "lazy_static",
- "log",
- "multimap",
- "petgraph",
- "prost 0.11.8 (git+https://github.com/Houndie/prost?rev=cd03610a716050c3526f682ac1625205a0c8d185)",
- "prost-types 0.11.8 (git+https://github.com/Houndie/prost?rev=cd03610a716050c3526f682ac1625205a0c8d185)",
- "regex",
  "tempfile",
  "which",
 ]
@@ -286,7 +286,7 @@ dependencies = [
 [[package]]
 name = "prost-derive"
 version = "0.11.8"
-source = "git+https://github.com/Houndie/prost?rev=cd03610a716050c3526f682ac1625205a0c8d185#cd03610a716050c3526f682ac1625205a0c8d185"
+source = "git+https://github.com/Houndie/prost?rev=00b422742bbcc994f7758928a6a76a01396a8c12#00b422742bbcc994f7758928a6a76a01396a8c12"
 dependencies = [
  "anyhow",
  "itertools",
@@ -297,29 +297,29 @@ dependencies = [
 
 [[package]]
 name = "prost-types"
-version = "0.11.8"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "379119666929a1afd7a043aa6cf96fa67a6dce9af60c88095a4686dbce4c9c88"
+version = "0.11.8-h"
+source = "git+https://github.com/Houndie/prost?rev=00b422742bbcc994f7758928a6a76a01396a8c12#00b422742bbcc994f7758928a6a76a01396a8c12"
 dependencies = [
- "prost 0.11.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ "prost 0.11.8-h",
 ]
 
 [[package]]
 name = "prost-types"
 version = "0.11.8"
-source = "git+https://github.com/Houndie/prost?rev=cd03610a716050c3526f682ac1625205a0c8d185#cd03610a716050c3526f682ac1625205a0c8d185"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "379119666929a1afd7a043aa6cf96fa67a6dce9af60c88095a4686dbce4c9c88"
 dependencies = [
- "prost 0.11.8 (git+https://github.com/Houndie/prost?rev=cd03610a716050c3526f682ac1625205a0c8d185)",
+ "prost 0.11.8",
 ]
 
 [[package]]
 name = "protoc-gen-prost"
-version = "0.2.2"
+version = "0.2.2-h"
 dependencies = [
  "once_cell",
- "prost 0.11.8 (git+https://github.com/Houndie/prost?rev=cd03610a716050c3526f682ac1625205a0c8d185)",
- "prost-build 0.11.8 (git+https://github.com/Houndie/prost?rev=cd03610a716050c3526f682ac1625205a0c8d185)",
- "prost-types 0.11.8 (git+https://github.com/Houndie/prost?rev=cd03610a716050c3526f682ac1625205a0c8d185)",
+ "prost 0.11.8-h",
+ "prost-build 0.11.8-h",
+ "prost-types 0.11.8-h",
  "regex",
 ]
 
@@ -328,21 +328,21 @@ name = "protoc-gen-prost-crate"
 version = "0.3.1"
 dependencies = [
  "once_cell",
- "prost 0.11.8 (registry+https://github.com/rust-lang/crates.io-index)",
- "prost-build 0.11.8 (registry+https://github.com/rust-lang/crates.io-index)",
- "prost-types 0.11.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ "prost 0.11.8-h",
+ "prost-build 0.11.8-h",
+ "prost-types 0.11.8-h",
  "protoc-gen-prost",
  "regex",
 ]
 
 [[package]]
 name = "protoc-gen-prost-serde"
-version = "0.2.3"
+version = "0.2.3-h"
 dependencies = [
  "pbjson-build",
- "prost 0.11.8 (registry+https://github.com/rust-lang/crates.io-index)",
- "prost-build 0.11.8 (registry+https://github.com/rust-lang/crates.io-index)",
- "prost-types 0.11.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ "prost 0.11.8-h",
+ "prost-build 0.11.8-h",
+ "prost-types 0.11.8-h",
  "protoc-gen-prost",
  "regex",
 ]
@@ -353,13 +353,13 @@ version = "0.0.1"
 
 [[package]]
 name = "protoc-gen-tonic"
-version = "0.2.2"
+version = "0.2.2-h"
 dependencies = [
  "heck",
  "prettyplease",
- "prost 0.11.8 (registry+https://github.com/rust-lang/crates.io-index)",
- "prost-build 0.11.8 (registry+https://github.com/rust-lang/crates.io-index)",
- "prost-types 0.11.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ "prost 0.11.8-h",
+ "prost-build 0.11.8-h",
+ "prost-types 0.11.8-h",
  "protoc-gen-prost",
  "regex",
  "syn",
@@ -449,7 +449,7 @@ checksum = "5bf5e9b9c0f7e0a7c027dcfaba7b2c60816c7049171f679d99ee2ff65d0de8c4"
 dependencies = [
  "prettyplease",
  "proc-macro2",
- "prost-build 0.11.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ "prost-build 0.11.8",
  "quote",
  "syn",
 ]
